@@ -9,15 +9,15 @@ export const withSlider = (Component) => {
         slide: 1,
       };
 
-      this.nextSlideHandler = this.nextSlideHandler.bind(this);
-      this.previousSlideHandler = this.previousSlideHandler.bind(this);
+      this.onNextSlide = this.onNextSlide.bind(this);
+      this.onPreviousSlide = this.onPreviousSlide.bind(this);
     }
 
-    nextSlideHandler() {
+    onNextSlide() {
       this.setState({slide: this.state.slide + 1});
     }
 
-    previousSlideHandler() {
+    onPreviousSlide() {
       this.setState({slide: this.state.slide - 1});
     }
 
@@ -26,8 +26,8 @@ export const withSlider = (Component) => {
         <Component
           {...this.props}
           slide={this.state.slide}
-          nextSlideHandler={this.nextSlideHandler}
-          previousSlideHandler={this.previousSlideHandler}
+          onNextSlide={this.onNextSlide}
+          onPreviousSlide={this.onPreviousSlide}
         />
       );
     }

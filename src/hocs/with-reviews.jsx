@@ -19,39 +19,39 @@ export const withReviews = (Component) => {
         comment: ``,
       };
 
-      this.addFormOpenHandler = this.addFormOpenHandler.bind(this);
-      this.addFormCloseHandler = this.addFormCloseHandler.bind(this);
+      this.onAddFormOpen = this.onAddFormOpen.bind(this);
+      this.onAddFormClose = this.onAddFormClose.bind(this);
       this.closePopupKeydown = this.closePopupKeydown.bind(this);
-      this.valueChangeHandler = this.valueChangeHandler.bind(this);
-      this.submitHandler = this.submitHandler.bind(this);
+      this.onValueChange = this.onValueChange.bind(this);
+      this.onSubmit = this.onSubmit.bind(this);
     }
 
     closePopupKeydown(evt) {
       if (evt.keyCode === KeyCode.ESC) {
-        this.addFormCloseHandler();
+        this.onAddFormClose();
       }
     }
 
-    addFormOpenHandler() {
+    onAddFormOpen() {
       this.setState({isOpen: true});
 
       document.addEventListener(`keydown`, this.closePopupKeydown);
     }
 
-    addFormCloseHandler() {
+    onAddFormClose() {
       this.setState({isOpen: false});
 
       document.removeEventListener(`keydown`, this.closePopupKeydown);
     }
 
-    valueChangeHandler(evt) {
+    onValueChange(evt) {
       const {name, value} = evt.target;
 
       this.setState({[name]: value});
       localStorage.setItem(name, value);
     }
 
-    submitHandler(evt) {
+    onSubmit(evt) {
       evt.preventDefault();
 
       this.props.addReview({
@@ -69,7 +69,7 @@ export const withReviews = (Component) => {
       localStorage.removeItem(`rating`);
       localStorage.removeItem(`comment`);
 
-      this.addFormCloseHandler();
+      this.onAddFormClose();
     }
 
     render() {
@@ -77,10 +77,10 @@ export const withReviews = (Component) => {
         <Component
           {...this.props}
           isOpen={this.state.isOpen}
-          addFormOpenHandler={this.addFormOpenHandler}
-          addFormCloseHandler={this.addFormCloseHandler}
-          valueChangeHandler={this.valueChangeHandler}
-          submitHandler={this.submitHandler}
+          onAddFormOpen={this.onAddFormOpen}
+          onAddFormClose={this.onAddFormClose}
+          onValueChange={this.onValueChange}
+          onSubmit={this.onSubmit}
         />
       );
     }

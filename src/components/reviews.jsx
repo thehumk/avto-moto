@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import AddForm from "./add-form";
 import {withReviews} from '../hocs/with-reviews';
 
-const Reviews = ({reviews, isOpen, addFormOpenHandler, addFormCloseHandler, valueChangeHandler, submitHandler}) => {
+const Reviews = ({reviews, isOpen, onAddFormOpen, onAddFormClose, onValueChange, onSubmit}) => {
   return (
     <section className="description-car__reviews reviews">
-      <button className="reviews__add-review" onClick={addFormOpenHandler}>Оставить отзыв</button>
+      <button className="reviews__add-review" onClick={onAddFormOpen}>Оставить отзыв</button>
       {reviews.map((elem, i) => (
         <div className="reviews__review" key={i}>
           <h3 className="reviews__author">{elem.author}</h3>
@@ -45,9 +45,9 @@ const Reviews = ({reviews, isOpen, addFormOpenHandler, addFormCloseHandler, valu
       ))}
       {isOpen && (
         <AddForm
-          addFormCloseHandler={addFormCloseHandler}
-          submitHandler={submitHandler}
-          valueChangeHandler={valueChangeHandler}
+          onAddFormClose={onAddFormClose}
+          onSubmit={onSubmit}
+          onValueChange={onValueChange}
         />
       )}
     </section>
@@ -55,12 +55,19 @@ const Reviews = ({reviews, isOpen, addFormOpenHandler, addFormCloseHandler, valu
 };
 
 Reviews.propTypes = {
-  reviews: PropTypes.array.isRequired,
+  reviews: PropTypes.arrayOf(PropTypes.shape({
+    author: PropTypes.string.isRequired,
+    advantage: PropTypes.string.isRequired,
+    disadvantage: PropTypes.string.isRequired,
+    comment: PropTypes.string.isRequired,
+    rating: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+  })).isRequired,
   isOpen: PropTypes.bool.isRequired,
-  addFormOpenHandler: PropTypes.func.isRequired,
-  addFormCloseHandler: PropTypes.func.isRequired,
-  valueChangeHandler: PropTypes.func.isRequired,
-  submitHandler: PropTypes.func.isRequired,
+  onAddFormOpen: PropTypes.func.isRequired,
+  onAddFormClose: PropTypes.func.isRequired,
+  onValueChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default withReviews(Reviews);
