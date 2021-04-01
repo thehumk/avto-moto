@@ -1,0 +1,31 @@
+.specifications {
+  padding-left: 5px;
+}
+
+.specifications__list {
+  width: 565px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.specifications__item {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #d7d9df;
+}
+
+.specifications__name {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.specifications__value {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}

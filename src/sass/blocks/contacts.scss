@@ -1,0 +1,33 @@
+.contacts {
+  display: flex;
+}
+
+.contacts__list {
+  margin: -5px 102px 0 0;
+  padding: 0 0 0 6px;
+  list-style: none;
+}
+
+.contacts__item {
+  margin-bottom: 27px;
+}
+
+.contacts__name {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #1a212f;
+
+  &--address {
+    margin-bottom: 10px;
+  }
+}
+
+.contacts__value {
+  margin: 0;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
+  color: #000000;
+}

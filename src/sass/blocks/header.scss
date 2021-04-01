@@ -1,0 +1,32 @@
+.header {
+  background-color: #f5f5f9;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 6px;
+  max-width: 1180px;
+  box-sizing: border-box;
+}
+
+.header__nav {
+  min-width: 518px;
+}
+
+.header__nav-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header__nav-link {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 84px;
+  font-weight: 600;
+  color: #48494d;
+}

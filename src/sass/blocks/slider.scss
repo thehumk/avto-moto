@@ -1,0 +1,91 @@
+.slider {
+  margin-left: -1px;
+  width: 600px;
+}
+
+.slider__wrapper {
+  position: relative;
+  margin-bottom: 34px;
+}
+
+.slider__new-model {
+  display: block;
+  position: absolute;
+  width: 122px;
+  height: 30px;
+  top: 0;
+  left: 0;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 10px;
+  line-height: 29px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #ffffff;
+  background-color: #d12136;
+}
+
+.slider__slide {
+  background-color: #000000;
+}
+
+.slider__control-panel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider__button-control {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  margin-top: 14px;
+  background-color: #ffffff;
+  border: 1px solid #d7d9df;
+  border-radius: 50%;
+  box-sizing: border-box;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 13px;
+    top: calc(50% - 6px);
+    left: calc(50% - 10px);
+    background-image: url("../../img/arrow.svg");
+    background-repeat: no-repeat;
+  }
+
+  &--next::after {
+    transform: rotate(180deg);
+  }
+
+  &--active::after {
+    background-image: url("../../img/arrow-active.svg");
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    border-color: #000000;
+  }
+}
+
+.slider__button-control:disabled:hover {
+  border-color: #d7d9df;
+}
+
+.slider__slide-list {
+  display: flex;
+  justify-content: space-between;
+  min-width: 434px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  img {
+    background-color: #000000;
+  }
+}
+

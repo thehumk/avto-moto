@@ -2,25 +2,27 @@
   "name": "avto-moto",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.10",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.8.3",
+    "moment": "2.29.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "7.2.3",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.1"
+    "redux": "4.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eslint": "eslint --ext .jsx --ext .js src/",
+    "eslint:fix": "eslint --fix --ext .jsx --ext .js src/",
+    "stylelint": "stylelint \"src/sass/**/*.scss\" --syntax scss",
+    "stylelint:fix": "stylelint \"src/sass/**/*.scss\" --syntax scss --fix",
+    "test": "npm run eslint && npm run stylelint"
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
@@ -34,5 +36,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "7.23.0",
+    "eslint-config-htmlacademy": "3.0.0",
+    "eslint-plugin-only-warn": "1.0.2",
+    "eslint-plugin-react": "^7.23.1",
+    "node-sass": "5.0.0",
+    "stylelint": "13.12.0",
+    "stylelint-config-htmlacademy": "0.1.4"
   }
 }

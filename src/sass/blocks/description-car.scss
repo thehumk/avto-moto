@@ -1,0 +1,64 @@
+.description-car {
+  max-width: 1180px;
+  margin: 85px auto 140px auto;
+}
+
+.description-car__tab-list {
+  display: flex;
+  margin: 0 0 0 5px;
+  padding: 0;
+  list-style: none;
+}
+
+.description-car__tab-item {
+  width: 195px;
+  height: 50px;
+  font-size: 20px;
+  line-height: 48px;
+  text-align: center;
+  border: 1px solid #d7d9df;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: #ffffff;
+    background-color: #d12136;
+  }
+
+  &:active {
+    outline: none;
+    color: #d12136;
+    background-color: #ffffff;
+  }
+
+  &--active {
+    line-height: 50px;
+    color: #ffffff;
+    background-color: #d12136;
+    border: none;
+
+    &:hover,
+    &:focus {
+      background-color: #bd0c21;
+    }
+
+    &:active {
+      color: #ffffff;
+      background-color: #d12136;
+    }
+  }
+}
+
+.description-car__specifications {
+  margin-top: 10px;
+}
+
+.description-car__contacts {
+  margin-top: 30px;
+}
+
+.description-car__reviews {
+  margin-top: 30px;
+}
