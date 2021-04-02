@@ -1,7 +1,9 @@
 .car-card {
   display: flex;
-  max-width: 1180px;
+  max-width: 1220px;
   margin: 74px auto 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .car-card__slider {

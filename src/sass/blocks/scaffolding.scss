@@ -31,6 +31,10 @@ body {
   font-family: "Open Sans", "Arial", sans-serif;
   color: #48494d;
   background-color: #ffffff;
+
+  @media (min-width: 1024px) {
+    overflow-x: hidden;
+  }
 }
 
 a {
@@ -50,4 +54,19 @@ input[type="radio"].visually-hidden {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .app__header,
+  .app__footer {
+    flex: 0 0 auto;
+  }
+
+  .app__main {
+    flex: 1 0 auto;
+  }
 }

@@ -35,13 +35,28 @@ export const withReviews = (Component) => {
     onAddFormOpen() {
       this.setState({isOpen: true});
 
+      document.documentElement.style.overflow = `hidden`;
       document.addEventListener(`keydown`, this.closePopupKeydown);
     }
 
     onAddFormClose() {
       this.setState({isOpen: false});
 
+      document.documentElement.style.overflow = `auto`;
       document.removeEventListener(`keydown`, this.closePopupKeydown);
+    }
+
+    onBlurValidationCheck(evt) {
+      const {value} = evt.target;
+
+      if (value === ``) {
+        evt.currentTarget.querySelector(`.add-form__required-message`).style.display = `block`;
+        evt.currentTarget.querySelector(`.add-form__input`).classList.add(`add-form__input--validation-error`);
+        return;
+      }
+
+      evt.currentTarget.querySelector(`.add-form__required-message`).style.display = `none`;
+      evt.currentTarget.querySelector(`.add-form__input`).classList.remove(`add-form__input--validation-error`);
     }
 
     onValueChange(evt) {
@@ -53,6 +68,23 @@ export const withReviews = (Component) => {
 
     onSubmit(evt) {
       evt.preventDefault();
+
+      let validation = true;
+
+      const requiredFields = evt.target.querySelectorAll(`.add-form__input--required`);
+
+      for (let i = 0; i < requiredFields.length; i++) {
+        if (requiredFields[i].value === ``) {
+          evt.currentTarget.querySelector(`.add-form__required-message--${requiredFields[i].name}`).style.display = `block`;
+          requiredFields[i].classList.add(`add-form__input--validation-error`);
+
+          validation = false;
+        }
+      }
+
+      if (!validation) {
+        return;
+      }
 
       this.props.addReview({
         author: this.state.name,
@@ -81,6 +113,7 @@ export const withReviews = (Component) => {
           onAddFormClose={this.onAddFormClose}
           onValueChange={this.onValueChange}
           onSubmit={this.onSubmit}
+          onBlurValidationCheck={this.onBlurValidationCheck}
         />
       );
     }

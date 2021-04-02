@@ -3,7 +3,7 @@ import logo from '../img/logo.svg';
 
 const Header = () => {
   return (
-    <header className="header">
+    <header className="header app__header">
       <div className="header__wrapper">
         <img src={logo} alt="Avto-Moto"/>
         <nav className="header__nav">

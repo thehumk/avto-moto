@@ -80,6 +80,10 @@
   display: flex;
   margin-left: 3px;
   margin-bottom: 35px;
+
+  @media (max-width: 1179px) {
+    flex-wrap: wrap;
+  }
 }
 
 .car-info__new-price {

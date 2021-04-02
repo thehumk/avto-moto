@@ -40,6 +40,7 @@
   background: url("../../img/icon-close.svg");
   background-repeat: no-repeat;
   border: none;
+  cursor: pointer;
 }
 
 .add-form__wrapper {
@@ -75,13 +76,28 @@
     height: 118px;
     resize: none;
   }
+
+  &--validation-error {
+    border: 1px solid #ff0000;
+  }
 }
 
 .add-form__required-wrapper {
   position: relative;
 }
 
-.add-form__required {
+.add-form__required-message {
+  content: "Пожалуйста, заполните поле";
+  display: none;
+  position: absolute;
+  top: -23px;
+  left: 0;
+  font-size: 14px;
+  line-height: 19px;
+  color: #ff0000;
+}
+
+.add-form__required-star {
   position: absolute;
   display: block;
   width: 6px;
@@ -125,6 +141,7 @@
   margin-left: 8px;
   background-image: url("../../img/review-star.svg");
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .add-form__submit-btn {

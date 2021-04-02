@@ -6,27 +6,45 @@
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 0 6px;
-  max-width: 1180px;
+  padding: 0 26px;
+  max-width: 1220px;
   box-sizing: border-box;
 }
 
 .header__nav {
-  min-width: 518px;
+  min-width: 528px;
+}
+
+.header__nav-item {
+  padding: 0;
 }
 
 .header__nav-list {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin: 0;
+  margin-right: -34px;
   padding: 0;
   list-style: none;
 }
 
 .header__nav-link {
   display: inline-block;
+  padding: 0 34px;
   font-size: 16px;
   line-height: 84px;
   font-weight: 600;
   color: #48494d;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    outline: none;
+    background-color: #d12136;
+  }
+
+  &:active {
+    background-color: #bd0c21;
+  }
 }

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import AddForm from "./add-form";
 import {withReviews} from '../hocs/with-reviews';
 
-const Reviews = ({reviews, isOpen, onAddFormOpen, onAddFormClose, onValueChange, onSubmit}) => {
+const Reviews = ({reviews, isOpen, onAddFormOpen, onAddFormClose, onValueChange, onSubmit, onBlurValidationCheck}) => {
   return (
     <section className="description-car__reviews reviews">
       <button className="reviews__add-review" onClick={onAddFormOpen}>Оставить отзыв</button>
@@ -48,6 +48,7 @@ const Reviews = ({reviews, isOpen, onAddFormOpen, onAddFormClose, onValueChange,
           onAddFormClose={onAddFormClose}
           onSubmit={onSubmit}
           onValueChange={onValueChange}
+          onBlurValidationCheck={onBlurValidationCheck}
         />
       )}
     </section>
@@ -68,6 +69,7 @@ Reviews.propTypes = {
   onAddFormClose: PropTypes.func.isRequired,
   onValueChange: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
+  onBlurValidationCheck: PropTypes.func.isRequired,
 };
 
 export default withReviews(Reviews);

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer app__footer">
       <ul className="footer__list">
         <li className="footer__item">
           <a className="footer__link" href="#">Корпоративным клиентам</a>
