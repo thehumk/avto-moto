@@ -14,6 +14,9 @@
 }
 
 .footer__item {
+  flex-grow: 1;
+  text-align: center;
+
   &:first-child {
     margin-left: -33px;
   }
@@ -25,7 +28,7 @@
 
 .footer__link {
   display: inline-block;
-  padding: 0 33px;
+  width: 100%;
   font-size: 16px;
   line-height: 82px;
   font-weight: 600;
@@ -41,4 +44,8 @@
   &:active {
     background-color: #bd0c21;
   }
+
+  // @media (max-width: 1220px) {
+  //   padding: 0 20px;
+  // }
 }
