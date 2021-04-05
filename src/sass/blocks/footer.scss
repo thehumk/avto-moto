@@ -4,17 +4,17 @@
 
 .footer__list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   max-width: 1220px;
   margin: 0 auto;
   padding: 0 25px 0 29px;
   box-sizing: border-box;
   list-style: none;
+  overflow-x: hidden;
 }
 
 .footer__item {
-  flex-grow: 1;
   text-align: center;
 
   &:first-child {
@@ -29,10 +29,12 @@
 .footer__link {
   display: inline-block;
   width: 100%;
+  padding: 0 18px;
   font-size: 16px;
   line-height: 82px;
   font-weight: 600;
   color: #48494d;
+  box-sizing: border-box;
 
   &:hover,
   &:focus {

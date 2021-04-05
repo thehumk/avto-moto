@@ -28,13 +28,10 @@
 body {
   margin: 0 auto;
   min-width: 1024px;
+  -webkit-min-logical-width: 1007px;
   font-family: "Open Sans", "Arial", sans-serif;
   color: #48494d;
   background-color: #ffffff;
-
-  @media (min-width: 1024px) {
-    overflow-x: hidden;
-  }
 }
 
 a {
